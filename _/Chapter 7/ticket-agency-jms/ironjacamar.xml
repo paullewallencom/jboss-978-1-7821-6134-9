@@ -1,0 +1,34 @@
+<ironjacamar>
+ 
+            <connection-definitions>
+                <connection-definition class-name="org.apache.activemq.ra.ActiveMQManagedConnectionFactory" jndi-name="java:/ConnectionFactory" enabled="true" pool-name="ConnectionFactory">
+ 
+                    <xa-pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>20</max-pool-size>
+                        <prefill>false</prefill>
+                        <is-same-rm-override>false</is-same-rm-override>
+                    </xa-pool>
+ 
+                </connection-definition>
+            </connection-definitions>
+ 
+            <admin-objects>
+                <admin-object class-name="org.apache.activemq.command.ActiveMQQueue" jndi-name="java:jboss/activemq/queue/TestQueue" use-java-context="true" pool-name="TestQueue">
+ 
+                    <config-property name="PhysicalName">
+                        activemq/queue/TestQueue
+                    </config-property>
+ 
+                </admin-object>
+ 
+                <admin-object class-name="org.apache.activemq.command.ActiveMQTopic" jndi-name="java:jboss/activemq/topic/TestTopic" use-java-context="true" pool-name="TestTopic">
+ 
+                    <config-property name="PhysicalName">
+                        activemq/topic/TestTopic
+                    </config-property>
+ 
+                </admin-object>
+            </admin-objects>
+
+</ironjacamar>
